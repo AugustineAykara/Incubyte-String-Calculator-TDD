@@ -18,4 +18,10 @@ public class StringCalculatorTest {
         assertEquals(5, calculator.add("5"), "Adding a single integer should return the same number itself");
     }
 
+    @Test
+    void test_AddSingleNegativeInteger_ReturnExceptionMessage() {
+        StringCalculator calculator = new StringCalculator();
+        assertEquals("negative numbers not allowed -10", calculator.add("-10"), "Adding a single negative integer should return exception message 'negative numbers not allowed <negative_number>'");
+    }
+
 }
