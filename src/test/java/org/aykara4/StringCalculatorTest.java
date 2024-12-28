@@ -46,4 +46,15 @@ public class StringCalculatorTest {
         assertEquals(30, calculator.add("5\n10,15"), "Adding multiple numbers with new line delimiter should return their sum");
     }
 
+    @Test
+    void test_AddMultipleInteger_WithNewLineDelimiter_WithNegativeNumber_ReturnExceptionListingOutNegativeNumbers() {
+        StringCalculator calculator = new StringCalculator();
+        try {
+            int sum = calculator.add("5\n10,-15,20,-10");
+        } catch (IllegalArgumentException e) {
+            assertEquals("Negative numbers not allowed: [-15, -10]", e.getMessage(), "Adding a negative integer should return exception message 'negative numbers not allowed <negative_number>'");
+        }
+
+    }
+
 }
