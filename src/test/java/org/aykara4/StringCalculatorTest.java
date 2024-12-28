@@ -54,7 +54,12 @@ public class StringCalculatorTest {
         } catch (IllegalArgumentException e) {
             assertEquals("Negative numbers not allowed: [-15, -10]", e.getMessage(), "Adding a negative integer should return exception message 'negative numbers not allowed <negative_number>'");
         }
+    }
 
+    @Test
+    void test_AddCustomDelimiter_ShouldReturnSum() {
+        StringCalculator calculator = new StringCalculator();
+        assertEquals(30, calculator.add("//;\n10;20"), "Using custom delimiter should return the sum os numbers");
     }
 
 }
