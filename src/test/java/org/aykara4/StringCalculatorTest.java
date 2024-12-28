@@ -22,7 +22,7 @@ public class StringCalculatorTest {
     void test_AddSingleNegativeInteger_ReturnExceptionMessage() {
         StringCalculator calculator = new StringCalculator();
         try {
-            int sum = calculator.add("-10");
+            calculator.add("-10");
         } catch (IllegalArgumentException e) {
             assertEquals("Negative numbers not allowed: [-10]", e.getMessage(), "Adding a single negative integer should return exception message 'negative numbers not allowed <negative_number>'");
         }
@@ -50,7 +50,7 @@ public class StringCalculatorTest {
     void test_AddMultipleInteger_WithNewLineDelimiter_WithNegativeNumber_ReturnExceptionListingOutNegativeNumbers() {
         StringCalculator calculator = new StringCalculator();
         try {
-            int sum = calculator.add("5\n10,-15,20,-10");
+            calculator.add("5\n10,-15,20,-10");
         } catch (IllegalArgumentException e) {
             assertEquals("Negative numbers not allowed: [-15, -10]", e.getMessage(), "Adding a negative integer should return exception message 'negative numbers not allowed <negative_number>'");
         }
@@ -60,6 +60,12 @@ public class StringCalculatorTest {
     void test_AddCustomDelimiter_ShouldReturnSum() {
         StringCalculator calculator = new StringCalculator();
         assertEquals(30, calculator.add("//;\n10;20"), "Using custom delimiter should return the sum os numbers");
+    }
+
+    @Test
+    void test_AddCustomDelimiter_WithSizeGreaterThan1_ShouldReturnSum() {
+        StringCalculator calculator = new StringCalculator();
+        assertEquals(60, calculator.add("//+++\n10+++20+++30"), "Using custom delimiter with size >1 should return the sum os numbers");
     }
 
 }
