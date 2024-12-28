@@ -28,4 +28,16 @@ public class StringCalculatorTest {
         }
     }
 
+    @Test
+    void test_AddDoubleInteger_ReturnSumOfInteger() {
+        StringCalculator calculator = new StringCalculator();
+        assertEquals(15, calculator.add("5,10"), "Adding two numbers should return their sum");
+    }
+
+    @Test
+    void test_AddMultipleInteger_ReturnSumOfInteger() {
+        StringCalculator calculator = new StringCalculator();
+        assertEquals(30, calculator.add("5,10,15"), "Adding multiple numbers should return their sum");
+    }
+
 }
