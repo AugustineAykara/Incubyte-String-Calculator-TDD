@@ -10,7 +10,13 @@ public class StringCalculator {
             return 0;
         }
 
-        String[] integerArray = numbers.split("[,\n]");
+        String delimiter = "[,\n]";
+        if(numbers.startsWith("//")) {
+            delimiter = numbers.substring(2, numbers.indexOf("\n"));
+            numbers = numbers.substring(numbers.indexOf("\n")+1);
+        }
+
+        String[] integerArray = numbers.split(delimiter);
         List<Integer> negativeList = new ArrayList<>();
         int sum = 0;
         for(String number : integerArray) {
