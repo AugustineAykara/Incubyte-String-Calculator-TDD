@@ -7,6 +7,9 @@ public class StringCalculator {
             return 0;
         }
         int num = Integer.parseInt(numbers);
+        if(num < 0) {
+            throw new IllegalArgumentException("Negative numbers not allowed: " + num);
+        }
         return num;
     }
 
