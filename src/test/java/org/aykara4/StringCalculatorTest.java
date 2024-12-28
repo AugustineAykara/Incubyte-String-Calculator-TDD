@@ -24,7 +24,7 @@ public class StringCalculatorTest {
         try {
             int sum = calculator.add("-10");
         } catch (IllegalArgumentException e) {
-            assertEquals("Negative numbers not allowed: -10", e.getMessage(), "Adding a single negative integer should return exception message 'negative numbers not allowed <negative_number>'");
+            assertEquals("Negative numbers not allowed: [-10]", e.getMessage(), "Adding a single negative integer should return exception message 'negative numbers not allowed <negative_number>'");
         }
     }
 
