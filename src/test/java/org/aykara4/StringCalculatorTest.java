@@ -9,6 +9,13 @@ public class StringCalculatorTest {
     @Test
     void test_AddEmptyString_ReturnZero() {
         StringCalculator calculator = new StringCalculator();
-        assertEquals(0, calculator.add(""));
+        assertEquals(0, calculator.add(""), "Adding an empty string should return 0");
     }
+
+    @Test
+    void test_AddSingleInteger_ReturnInteger() {
+        StringCalculator calculator = new StringCalculator();
+        assertEquals(5, calculator.add("5"), "Adding a single integer should return the same number itself");
+    }
+
 }
