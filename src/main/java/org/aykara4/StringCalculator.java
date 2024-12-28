@@ -13,6 +13,7 @@ public class StringCalculator {
         String delimiter = "[,\n]";
         if(numbers.startsWith("//")) {
             delimiter = numbers.substring(2, numbers.indexOf("\n"));
+            delimiter = "\\" + delimiter;
             numbers = numbers.substring(numbers.indexOf("\n")+1);
         }
 
