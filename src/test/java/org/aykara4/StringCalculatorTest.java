@@ -40,4 +40,10 @@ public class StringCalculatorTest {
         assertEquals(30, calculator.add("5,10,15"), "Adding multiple numbers should return their sum");
     }
 
+    @Test
+    void test_AddMultipleInteger_WithNewLineDelimiter_ReturnSumOfInteger() {
+        StringCalculator calculator = new StringCalculator();
+        assertEquals(30, calculator.add("5\n10,15"), "Adding multiple numbers with new line delimiter should return their sum");
+    }
+
 }
